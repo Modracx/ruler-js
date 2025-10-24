@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ruler-js Vanilla js</title>
+    <script src="ruler-vanilla.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, sans-serif;
+        background-color: #f9f9f9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100vh;
+      }
+
+      #rulerContainer {
+        width: 90%;
+        height: 400px;
+        border: 1px solid #aaa;
+        position: relative;
+        margin-top: 40px;
+        background-color: #fff;
+      }
+
+      .controls {
+        margin-top: 20px;
+      }
+
+      button {
+        background-color: #0078d4;
+        color: #fff;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 5px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: background 0.25s ease;
+      }
+
+      button:hover {
+        background-color: #005fa3;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="rulerContainer"></div>
+
+    <div class="controls">
+      <button id="toggleRuler">Create Ruler</button>
+    </div>
+
+    <script>
+      const container = document.getElementById("rulerContainer");
+      const toggleBtn = document.getElementById("toggleRuler");
+      let isCreated = false;
+
+      toggleBtn.addEventListener("click", () => {
+        if (!isCreated) {
+          Ruler.create(container, {
+            unit: "in",
+            unitPrecision: 1,
+            crosshairColor: "red",
+            crosshairStyle: "dashed",
+            mouseBoxBg: "#444",
+            mouseBoxColor: "white",
+            tickColor: "#000",
+          });
+          toggleBtn.textContent = "Clear Ruler";
+          isCreated = true;
+        } else {
+          Ruler.clear(container);
+          toggleBtn.textContent = "Create Ruler";
+          isCreated = false;
+        }
+      });
+    </script>
+  </body>
+</html>
