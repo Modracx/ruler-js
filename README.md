@@ -39,7 +39,7 @@ This library is available in both **vanilla JavaScript** and **jQuery** versions
 
 ## Example Usage
 
-### ✅ **Vanilla JavaScript**
+### **Vanilla JavaScript**
 
 ```js
 const container = document.getElementById("rulerContainer");
@@ -58,7 +58,7 @@ Ruler.create(container, {
 Ruler.clear(container);
 ```
 
-### ✅ **jQuery**
+### **jQuery**
 
 ```js
 const $el = $("#rulerContainer");
