@@ -1,3 +1,8 @@
+/*!
+ * vanilla js ruler
+ * Kenneth D'silva (Modracx), Copyright (c) October 2025
+ * Licensed under the MIT License – https://opensource.org/licenses/MIT
+ */
 (function () {
     function pixelsPerInch() {
         const div = document.createElement("div");
